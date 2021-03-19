@@ -1,0 +1,21 @@
+var x, L, M, i: longint;
+begin
+    for i := 1 to 1000000 do
+    begin
+      x := i;
+      L := 0;
+      M := 0;
+      while x > 0 do begin
+        L := L + 1;
+        if M < x then 
+            M:= M + (x mod 10) * 2;
+        x := x div 10;
+      end;
+      
+      if (L = 3) and (M = 28) then
+      begin
+        writeln(i);
+        break;
+      end;
+    end;
+end.
