@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int Ylica(int Begin, int End)
+{
+    vector<int> chet;
+    vector<int> nechet;
+    
+    for (int i = Begin; i <= End; i++)
+    {
+        if (i % 2 == 0) chet.push_back(i);
+        else nechet.push_back(i);
+    }
+    if (chet.size() == nechet.size())
+        return chet.size()-1;
+    else if (chet.size() < nechet.size())
+        return chet.size();
+    else
+        return nechet.size();
+}
+
+int main()
+{
+    int Begin, End;
+    cin >> Begin >> End;
+    
+    cout << Ylica(Begin, End) << endl;
+
+    return 0;
+}
